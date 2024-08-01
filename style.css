@@ -1,8 +1,21 @@
-main{
+main {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     height: 100vh;
 }
-main>*{
+
+main>* {
     border: 2px solid black;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+
+}
+
+.card {
+    border: 2px solid black;
+
 }
