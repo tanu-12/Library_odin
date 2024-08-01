@@ -33,10 +33,9 @@ function addBookToLibrary(title) {
 
 
   const remove = document.querySelector(".Remove");
+  console.log(remove.length);
 
-  remove.addEventListener("click", function () {
-    console.log("removed");
-  });
+
 
 
 
