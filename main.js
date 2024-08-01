@@ -32,8 +32,14 @@ function addBookToLibrary(title) {
   container.appendChild(div);
 
 
-  const remove = document.querySelector(".Remove");
-  console.log(remove.length);
+  const remove = Array.from(document.querySelectorAll(".Remove"));
+  console.log(remove);
+  remove.forEach(function (item) {
+    item.addEventListener("click", function () {
+      console.log(item);
+      console.log("removed");
+    });
+  });
 
 
 
