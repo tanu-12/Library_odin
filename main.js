@@ -20,33 +20,11 @@ function addBookToLibrary(title) {
 
 
   // I need to display it in cards ;
-  const div = document.createElement("div");
-  const button = document.createElement("button");
-  div.className = "card";
-  div.textContent = "title: " + title;
-  button.textContent = "Remove";
-  button.className = "Remove";
-  div.dataset.index = count++;
-  console.log(div.dataset.index);
-  div.appendChild(button);
-  container.appendChild(div);
+  displayCard();
 
-
-  const remove = Array.from(document.querySelectorAll(".Remove"));
-  console.log(remove);
-  remove.forEach(function (item) {
-    item.addEventListener("click", function () {
-      console.log(item);
-      console.log("removed");
-    });
-  });
-
-
-
-
-
-  // do stuff here
 }
+
+
 submit.addEventListener("click", function (e) {
   const title = document.querySelector("#title");
   addBookToLibrary(title.value);
@@ -57,3 +35,18 @@ submit.addEventListener("click", function (e) {
 
 
 });
+function displayCard() {
+  const div = document.createElement("div");
+  const button = document.createElement("button");
+  div.className = "card";
+  div.textContent = "title: " + myLibrary.title;
+  button.textContent = "Remove";
+  button.className = "Remove";
+  div.dataset.index = count++;
+  console.log(div.dataset.index);
+
+
+  div.appendChild(button);
+  container.appendChild(div);
+
+}
