@@ -34,23 +34,31 @@ function addBookToLibrary(title) {
 }
 function displayCard(title) {
 
-  //we are also creating cards dynamically here so that we can get to display 
+  //we are also creating cards dynamically here so that we can get to display it
   const div = document.createElement("div");
   const button = document.createElement("button");
   div.className = "card";
   div.textContent = "title: " + title;
-  button.textContent = "Remove";
+  // button.textContent = "Remove";
   button.className = "Remove";
-  div.dataset.index = count++;
+  div.dataset.index = myLibrary.findIndex(x => x.title == title);
   console.log(div.dataset.index);
   div.appendChild(button);
   container.appendChild(div);
-  button.addEventListener("click", function () {
+  // console.log(document.querySelectorAll(".card")[0].textContent);
+  button.addEventListener("click", function (event) {
     console.log("remove is added");
-    console.log(div.dataset.index);
+    console.log(event.target.parentNode.getAttribute('data-index'));
 
-    console.log(myLibrary.splice(div.dataset.index, 1));
+    // console.log(myLibrary.splice(div.dataset.index, 1));
+    // updateIndex(document.querySelectorAll(".card"));
+    // console.log(div.dataset.index);
+    // div.parentNode.removeChild(div);
+
+
 
   });
 
+}
+function updateIndex(cards) {
 }
