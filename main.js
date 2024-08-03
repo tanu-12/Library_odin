@@ -11,6 +11,7 @@ function Book(title) {
 }
 submit.addEventListener("click", function (e) {
   const title = document.querySelector("#title");
+  const pages = document.query
   addBookToLibrary(title.value);
   console.log(myLibrary);
 
@@ -36,24 +37,35 @@ function displayCard(title) {
 
   //we are also creating cards dynamically here so that we can get to display it
   const div = document.createElement("div");
+  console.log(div.textContent);
+  const name = document.createElement("div");
+  const pages = document.createElement("div");
+  const read = document.createElement("div");
+
   const button = document.createElement("button");
   div.className = "card";
-  div.textContent = "title: " + title;
+  name.textContent = title;
+  name.className = "title"
+  console.log(name.textContent);
   // button.textContent = "Remove";
   button.className = "Remove";
   div.dataset.index = myLibrary.findIndex(x => x.title == title);
   console.log(div.dataset.index);
-  div.appendChild(button);
+
+  div.append(name, button)
   container.appendChild(div);
-  // console.log(document.querySelectorAll(".card")[0].textContent);
+  console.log(document.querySelectorAll(".card")[0].textContent);
   button.addEventListener("click", function (event) {
     console.log("remove is added");
     console.log(event.target.parentNode.getAttribute('data-index'));
+    var i = event.target.parentNode.getAttribute('data-index');
 
-    // console.log(myLibrary.splice(div.dataset.index, 1));
+    console.log(myLibrary.splice(i, 1));
     // updateIndex(document.querySelectorAll(".card"));
     // console.log(div.dataset.index);
-    // div.parentNode.removeChild(div);
+    div.parentNode.removeChild(div);
+    console.log(myLibrary);
+    updateIndex(document.querySelectorAll(".title"));
 
 
 
@@ -61,4 +73,13 @@ function displayCard(title) {
 
 }
 function updateIndex(cards) {
+  console.log(cards)
+
+
+  cards.forEach(element => {
+    element.parentNode.dataset.index = myLibrary.findIndex(x => x.title == element.innerText);
+  });
+
+
+
 }
