@@ -55,7 +55,7 @@ function displayCard(title, author, pages) {
   page.textContent = pages;
   name.className = "title"
   console.log(name.textContent);
-  // button.textContent = "Remove";
+  button.textContent = "Remove";
   button.className = "Remove";
   div.dataset.index = myLibrary.findIndex(x => x.title == title);
   console.log(div.dataset.index);
