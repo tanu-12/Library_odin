@@ -81,6 +81,7 @@ function displayCard(title, author, pages) {
 
 
   var readBtn = document.createElement("button");
+  readBtn.className = ""
   if (read.checked) {
     readBtn.style.backgroundColor = "green";
     readBtn.textContent = "Read";
