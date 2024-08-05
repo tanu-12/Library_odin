@@ -110,17 +110,12 @@ submit.addEventListener("click", function (e) {
 
 
   e.preventDefault();
-  resetField(title, author, pages, read);
+  document.getElementById("myForm").reset();
 
 
 
 });
-function resetField(title, author, pages) {
-  title.value = "";
-  author.value = "";
-  pages.value = "";
-  read.checked = false;
-}
+
 function addBookToLibrary(title, author, pages) {
 
   // basically i get data from a form 
