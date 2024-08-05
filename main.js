@@ -4,6 +4,11 @@ const submit = document.querySelector("button");
 const myLibrary = [];
 const container = document.querySelector(".container");
 var read = document.querySelector("#read");
+const add = document.querySelector("h2");
+const dialog = document.querySelector("dialog");
+add.addEventListener("click", function () {
+  dialog.showModal();
+})
 
 let count = 0;
 
@@ -13,32 +18,7 @@ function Book(title, author, pages) {
   this.pages = pages;
   // the constructor...
 }
-submit.addEventListener("click", function (e) {
-  const title = document.querySelector("#title");
-  const author = document.querySelector("#author");
-  const pages = document.querySelector("#pages");
-  addBookToLibrary(title.value, author.value, pages.value);
-  console.log(myLibrary);
 
-
-  e.preventDefault();
-
-
-
-});
-function addBookToLibrary(title, author, pages) {
-
-  // basically i get data from a form 
-  // i need to push this data in myLibrary
-
-  const Book1 = new Book(title, author, pages);
-  myLibrary.push(Book1);
-
-
-  // I need to display it in cards ;
-  displayCard(title, author, pages);
-
-}
 function displayCard(title, author, pages) {
 
   //we are also creating cards dynamically here so that we can get to display it
@@ -118,6 +98,40 @@ function displayCard(title, author, pages) {
 
 
   });
+
+}
+submit.addEventListener("click", function (e) {
+  dialog.close();
+  const title = document.querySelector("#title");
+  const author = document.querySelector("#author");
+  const pages = document.querySelector("#pages");
+  addBookToLibrary(title.value, author.value, pages.value);
+  console.log(myLibrary);
+
+
+  e.preventDefault();
+  resetField(title, author, pages, read);
+
+
+
+});
+function resetField(title, author, pages) {
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  read.checked = false;
+}
+function addBookToLibrary(title, author, pages) {
+
+  // basically i get data from a form 
+  // i need to push this data in myLibrary
+
+  const Book1 = new Book(title, author, pages);
+  myLibrary.push(Book1);
+
+
+  // I need to display it in cards ;
+  displayCard(title, author, pages);
 
 }
 function updateIndex(cards) {
