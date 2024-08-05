@@ -4,11 +4,11 @@ const submit = document.querySelector("button");
 const myLibrary = [];
 const container = document.querySelector(".container");
 var read = document.querySelector("#read");
-const add = document.querySelector("h2");
+const add = document.querySelector(".addBook");
 const dialog = document.querySelector("dialog");
 add.addEventListener("click", function () {
   dialog.showModal();
-})
+});
 
 let count = 0;
 
