@@ -1,5 +1,6 @@
 // const title = document.querySelector("#title");
 // console.log(title.value);
+const myForm = document.getElementById("myForm");
 const submit = document.querySelector("button");
 const myLibrary = [];
 const container = document.querySelector(".container");
@@ -100,17 +101,19 @@ function displayCard(title, author, pages) {
   });
 
 }
-submit.addEventListener("click", function (e) {
+myForm.addEventListener("submit", function (e) {
+
   dialog.close();
   const title = document.querySelector("#title");
   const author = document.querySelector("#author");
   const pages = document.querySelector("#pages");
   addBookToLibrary(title.value, author.value, pages.value);
+  e.preventDefault();
   console.log(myLibrary);
 
 
-  e.preventDefault();
-  document.getElementById("myForm").reset();
+
+  myForm.reset();
 
 
 
