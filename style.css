@@ -152,9 +152,47 @@ input:invalid+span::before {
 }
 
 input[type="checkbox"] {
-    appearance: inherit;
-    outline: inherit;
-    height: 10px;
-    width: 10px;
+
+    height: 100px;
+    width: 100px;
 
 }
+
+input[type="checkbox"] {
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid gray;
+    /* Adjusts the position of the checkboxes on the text baseline */
+    /* vertical-align: -100px; */
+    /* Set here so that Windows' High-Contrast Mode can override */
+    color: green;
+}
+
+input[type="checkbox"]::before {
+    content: "✔";
+    position: absolute;
+    font-size: 1.5em;
+    right: 2px;
+    top: -0.3em;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before {
+    /* Use `visibility` instead of `display` to avoid recalculating layout */
+    visibility: visible;
+}
+
+input[type="checkbox"]:disabled {
+    border-color: black;
+    background: #ddd;
+    color: gray;
+}
+
+display: flex;
+flex-wrap: wrap;
+
+align-content: center;
+}
+
+*/
