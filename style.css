@@ -67,10 +67,12 @@ h6 {
     isolation: isolate;
 }
 
+/* general styling */
+
 dialog {
     position: absolute;
     top: 30%;
-    left: 40%;
+    left: 35%;
 }
 
 h2 {
@@ -97,8 +99,25 @@ main>* {
 
 }
 
+/* styling form*/
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+li {
+    display: flex;
+    gap: 1rem;
+}
+
+label {
+    width: 4rem;
+}
+
 input {
-    /* appearance: none; */
+    appearance: none;
     outline: none;
 
     border: 2px solid #E5E7EB;
@@ -126,8 +145,8 @@ input:invalid+span::before {
     position: absolute;
     content: "* this is required";
     color: red;
-    top: 1.3rem;
-    left: -12.7rem;
+    top: 1.8rem;
+    left: -16rem;
 
 
 }
