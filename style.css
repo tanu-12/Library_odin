@@ -73,23 +73,34 @@ dialog {
     position: absolute;
     top: 30%;
     left: 35%;
+    background-color: rgba(197, 135, 72, 0.75);
 }
 
-h2 {
-    text-align: center;
-}
 
-/* main>* {
-    border: 2px solid black;
-} */
+
 
 .addBook {
-    width: 100%;
+    display: flex;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    /* justify-content: center; */
+    height: 2.5rem;
+    border: 2px solid black;
+    padding: 0.5em;
+    background-color: #bba784;
 }
 
+.addBook>p {
+
+    align-self: center;
+}
 
 
 /* styling form*/
+
+
+
 ul {
     list-style: none;
     display: flex;
@@ -117,14 +128,14 @@ input {
 input:focus {
 
 
-    border: 2px solid lightblue;
-    box-shadow: 0px 10px 2px 0px #E5E7EB;
+    border: 2px solid #654734;
+
 }
 
 
 
 input:invalid {
-    border: 2px solid red;
+    border: 2px solid #291e1a;
 }
 
 input+span {
@@ -134,7 +145,7 @@ input+span {
 input:invalid+span::before {
     position: absolute;
     content: "* this is required";
-    color: red;
+    color: #291e1a;
     top: 1.8rem;
     left: -16rem;
 
@@ -152,11 +163,11 @@ input[type="checkbox"] {
     position: relative;
     width: 1.5em;
     height: 1.5em;
-    border: 1px solid gray;
+    border: 1px solid #654734;
     /* Adjusts the position of the checkboxes on the text baseline */
     /* vertical-align: -100px; */
     /* Set here so that Windows' High-Contrast Mode can override */
-    color: green;
+    color: #654734
 }
 
 input[type="checkbox"]::before {
@@ -186,11 +197,11 @@ input[type="checkbox"]:disabled {
 }
 
 .readBook {
-    background-color: green;
+    background-color: #e6b1b1
 }
 
 .notReadBook {
-    background-color: red;
+    background-color: #9e7d6f
 }
 
 /*styling the cards*/
@@ -200,6 +211,8 @@ input[type="checkbox"]:disabled {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 
+    /* height: 100vh; */
+
 
 }
 
@@ -207,6 +220,31 @@ input[type="checkbox"]:disabled {
     border: 2px solid black;
     text-align: center;
     padding: 1rem;
-    box-shadow: 10px 10px 10px grey;
+    background-color: #ecd6c8;
 
+}
+
+.card>* {
+    margin-bottom: 0.5em;
+}
+
+/* general styling*/
+main {
+    background-image: url(icons/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.95;
+}
+
+button {
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0.65em;
+    border-radius: 1.175rem;
+    background-color: #bba784;
+    color: black;
+    margin-right: 1rem;
 }

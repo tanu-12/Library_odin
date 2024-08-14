@@ -32,8 +32,8 @@ function displayCard(title, author, pages) {
   const button = document.createElement("button");
   div.className = "card";
   name.textContent = title;
-  Author.textContent = author;
-  page.textContent = pages;
+  Author.textContent = `Author : ${author}`;
+  page.textContent = `No. Of Pages : ${pages}`;
   name.className = "title"
   console.log(name.textContent);
   button.textContent = "Remove";
