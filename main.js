@@ -64,12 +64,14 @@ function displayCard(title, author, pages) {
   var readBtn = document.createElement("button");
   readBtn.className = ""
   if (read.checked) {
-    readBtn.style.backgroundColor = "green";
+    readBtn.classList.remove("notReadBook");
+    readBtn.classList.add("readBook");
     readBtn.textContent = "Read";
 
   }
   else {
-    readBtn.style.backgroundColor = "red";
+    readBtn.classList.remove("readBook");
+    readBtn.classList.add("notReadBook");
     readBtn.textContent = "Not Read";
   }
   readBtn.value = read.checked;
@@ -83,14 +85,15 @@ function displayCard(title, author, pages) {
   readBtn.addEventListener("click", function (e) {
     if (e.target.value == "false") {
       console.log("checking");
-
-      e.target.style.backgroundColor = "green";
+      readBtn.classList.remove("notReadBook");
+      readBtn.classList.add("readBook");
       readBtn.textContent = "Read";
       e.target.value = "true";
     }
     else if (e.target.value) {
 
-      readBtn.style.backgroundColor = "red";
+      readBtn.classList.remove("readBook");
+      readBtn.classList.add("notReadBook");
       readBtn.textContent = "Not Read";
       e.target.value = "false";
     }
