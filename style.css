@@ -46,6 +46,14 @@ select {
     font: inherit;
 }
 
+
+.moderustic-fonts {
+    font-family: "Moderustic", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /*
     7. Avoid text overflows
   */
@@ -73,20 +81,22 @@ dialog {
     position: absolute;
     top: 30%;
     left: 35%;
-    background-color: rgba(197, 135, 72, 0.75);
+    background-color: #219ebc;
+    border: none;
 }
 
 
 
 
 .addBook {
+
     display: flex;
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
     /* justify-content: center; */
     height: 2.5rem;
-    border: 2px solid black;
+    font-weight: 700;
     padding: 0.5em;
     background-color: #bba784;
 }
@@ -128,14 +138,14 @@ input {
 input:focus {
 
 
-    border: 2px solid #654734;
+    border: 2px solid #8ecae6;
 
 }
 
 
 
 input:invalid {
-    border: 2px solid #291e1a;
+    border: 2px solid red;
 }
 
 input+span {
@@ -145,7 +155,7 @@ input+span {
 input:invalid+span::before {
     position: absolute;
     content: "* this is required";
-    color: #291e1a;
+    color: red;
     top: 1.8rem;
     left: -16rem;
 
@@ -167,7 +177,7 @@ input[type="checkbox"] {
     /* Adjusts the position of the checkboxes on the text baseline */
     /* vertical-align: -100px; */
     /* Set here so that Windows' High-Contrast Mode can override */
-    color: #654734
+    color: green;
 }
 
 input[type="checkbox"]::before {
@@ -217,7 +227,7 @@ input[type="checkbox"]:disabled {
 }
 
 .card {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     text-align: center;
     padding: 1rem;
     background-color: #ecd6c8;
@@ -230,11 +240,9 @@ input[type="checkbox"]:disabled {
 
 /* general styling*/
 main {
-    background-image: url(icons/background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    background-color: #023047;
     opacity: 0.95;
+    height: 100vh;
 }
 
 button {
@@ -244,7 +252,12 @@ button {
     box-shadow: none;
     padding: 0.65em;
     border-radius: 1.175rem;
-    background-color: #bba784;
+    background-color: #ffb703;
     color: black;
     margin-right: 1rem;
+}
+
+button:hover {
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .6),
+        0 0 1px rgba(0, 0, 0, 0);
 }
