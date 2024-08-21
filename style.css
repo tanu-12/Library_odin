@@ -77,10 +77,13 @@ h6 {
 
 /* general styling */
 
+
 dialog {
-    position: absolute;
-    top: 30%;
-    left: 35%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
     background-color: #219ebc;
     border: none;
 }
